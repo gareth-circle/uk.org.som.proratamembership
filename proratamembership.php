@@ -156,7 +156,7 @@ function proratamembership_civicrm_buildAmount($pageType, &$form, &$amount) {
           // as it checks every option displayed (and there is only one).
           if ($option['amount'] > 0) {
             // Only pro-rata paid memberships!
-            $option['amount'] = $option['amount'] * ($monthsToPay / 12);
+            $option['amount'] = round(($option['amount'] * ($monthsToPay / 12)),2);
             if ($monthsToPay == 1) {
               $option['label'] .= ' - Pro-rata: Dec only';
             }
